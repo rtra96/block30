@@ -2,7 +2,7 @@ import { useState } from 'react'
 import bookLogo from './assets/books.png'
 import { Route, Routes, BrowserRouter} from 'react-router-dom';
 import Account from './components/Account';
-import Books from './components/Books';
+import AllBooks from './components/Books';
 import Login from './components/Login';
 import Navbar from './components/Navigations';
 import Signup from './components/Register';
@@ -17,7 +17,7 @@ function App() {
 <BrowserRouter>
   <Navbar />
    <Routes>
-      <Route path = "/"  element ={<Books />} />
+      <Route path = "/"  element ={<AllBooks />} />
       <Route path = "/books/:bookId" element ={<SingleBook />} />
       <Route path = "/register" element = {<Signup />} />
       <Route path = "/login" element = {<Login />} />
