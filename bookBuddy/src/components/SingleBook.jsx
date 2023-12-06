@@ -26,7 +26,7 @@ export default function SingleBook (){
         <h3>{book.title}</h3>
         <p>ID #{book.id}</p>
         <p>{book.author}</p>
-        <p>Availability: {book.available}</p>
+        <p>Availability: {book.available ? "available" : "checked out"} </p>
         <img src={book.coverimage} alt={`picture of ${book.title}`} />
         <button onClick={() => {navigate("/")}}>Back to Home</button>
     </div>
