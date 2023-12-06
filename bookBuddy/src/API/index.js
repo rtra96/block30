@@ -19,3 +19,17 @@ export const fetchBooks = async () => {
     throw err;
   }
 };
+
+export const fetchSingleBook = async (bookId) => {
+    try {
+        const rsp = await fetch(`${API_URL}/books/${bookId}`);
+        const json = await rsp.json();
+        console.log(json);
+        return json.book;
+    }catch (err){
+        console.log(err);
+
+
+    }
+};
+

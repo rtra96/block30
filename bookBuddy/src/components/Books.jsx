@@ -28,7 +28,7 @@ export default function AllBooks (){
         <div className="book-card" key={index}>
               <img src={book.coverimage} alt={`cover of ${book.title}`} />
               <h1>{book.cover}</h1>
-              <button onClick={() => navigate(`/books/:${book.id}`)}>See Details</button>
+              <button onClick={() => navigate(`/books/${book.id}`)}>See Details</button>
          </div>
   ))}
      </div>
