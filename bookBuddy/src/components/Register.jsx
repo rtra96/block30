@@ -16,7 +16,7 @@ const RegistrationForm = () => {
     e.preventDefault();
 
     try {
-     const response = await fetch('/api/users/register', {
+     const response = await fetch('https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api/users/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
