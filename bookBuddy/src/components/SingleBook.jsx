@@ -22,13 +22,14 @@ export default function SingleBook (){
         getSingleBook();
 }, []);
   return (book &&
-    <div id="single-book">
+    <div className="single-book">
         <h3>{book.title}</h3>
         <p>ID #{book.id}</p>
         <p>{book.author}</p>
         <p>Availability: {book.available ? "available" : "checked out"} </p>
-        <img src={book.coverimage} alt={`picture of ${book.title}`} />
+        <img className="book-cover-img" src={book.coverimage} alt={`picture of ${book.title}`} />
         <button onClick={() => {navigate("/")}}>Back to Home</button>
+        <button onClick={() => {navigate("")}}>Checkout</button>
     </div>
   )
 }

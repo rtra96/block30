@@ -4,15 +4,16 @@ import {Link} from 'react-router-dom';
 
 function Navbar (){
   return ( 
-  <>
+  <div className="navigation-station">
     <nav>
-        <ul>
-        <li><Link to = "/">All Books</Link></li>
-        <li><Link to = "/register">Create an Account</Link></li> 
-        <li><Link to = "/login">Login to an Existing Account</Link></li>
-        </ul>
+        
+        <button><Link to = "/">All Books</Link></button>
+        <button><Link to = "/register">Create an Account</Link></button>
+        <button><Link to = "/login">Login to an Existing Account</Link></button>
+        <button><Link to = "/account">My Account</Link></button>
+        
     </nav>
-  </>
+  </div>
 
   );
 }

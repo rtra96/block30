@@ -2,6 +2,7 @@
 import React,{ useEffect, useState} from "react";
 import { fetchBooks } from "../API";
 import { useNavigate } from "react-router-dom";
+import "./App.css" ;
 export default function AllBooks (){
     const [books, setBooks] =useState([]);
     const navigate = useNavigate ();
@@ -22,11 +23,10 @@ export default function AllBooks (){
       }, []);
       
  return (
-  <div id="books-container">
-    <p>{books.length > 0 ? 'Available Books' : 'No books available'}</p>
-      {books.map((book, index) => (
+  <div className="books-container">
+    {books.map((book, index) => (
         <div className="book-card" key={index}>
-              <img src={book.coverimage} alt={`cover of ${book.title}`} />
+              <img className="book-cover-img" src={book.coverimage} alt={`cover of ${book.title}`} />
               <h1>{book.cover}</h1>
               <button onClick={() => navigate(`/books/${book.id}`)}>See Details</button>
          </div>

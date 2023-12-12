@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import './App.css';
 
-const LoginForm = () => {
+const LoginForm = ({setToken}) => {
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -26,8 +27,11 @@ const LoginForm = () => {
       if (response.ok) {
         const responseData = await response.json();
         console.log('Login Successful!:', responseData);
+        const userToken = responseData.token; setToken(userToken);
+        alert('Login Successful!');
     } else {
         console.error('Login failed:', response.statusText);
+        alert('Login Failed. Reset your password?');
     }
     } catch (error) {
       console.error('Login failed:', error.message);

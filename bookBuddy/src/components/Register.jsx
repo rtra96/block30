@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 
 const RegistrationForm = () => {
   const [formData, setFormData] = useState({
-    username: '',
+    firstname: '',
+    lastname: '',
     email: '',
     password: '',
   });
@@ -28,41 +29,55 @@ const RegistrationForm = () => {
         const responseData = await response.json();
         console.log('Account Created!:', responseData);
       } else {
+        console.log (response);
+        const msg = await response.json();
+        console.log(msg);
         console.error('Registration failed:', response.statusText);
+        
       }
     } catch (error) {
+      console.log (err);
       console.error('Registration failed:', error.message);
+      
     }
   };
 
-  return (
-    <div>
-      <h2>Create an Account</h2>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Username:
-          <input
-            type="text"
-            name="username"
-            value={formData.username}
-            onChange={handleChange}
+  
+  return ( <div>
+  <h2>Create an Account</h2>
+    <form onSubmit={handleSubmit}>
+    <label> First Name:
+        <input
+          type="text"
+          name="firstname"
+          value={formData.firstname}
+          onChange={handleChange}
           />
-        </label>
-        <br />
-
-        <label>
-          Email:
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
+      </label>
+      <br />
+      
+      <label> Last Name:
+        <input
+          type="text"
+          name="lastname"
+          value={formData.lastname}
+          onChange={handleChange}
           />
-        </label>
-        <br />
+      </label>
+      <br />
+      
+      
+      <label> Email:
+        <input
+          type="email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+          />
+      </label>
+      <br />
 
-        <label>
-          Password:
+      <label>Password:
           <input
             type="password"
             name="password"
