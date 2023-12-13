@@ -13,40 +13,15 @@ form {
     justify-content: space-around;
 }
 
-/* label {
-    display: block;
-    margin-bottom: 5px;
-  } */
-   
-  /* style for input fields */
-  /* input {
-    width: 15%;
-    padding: 8px;
-    margin-bottom: 10px;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-} */
-  
-  /* style for buttons */
-  /* button {
-    background-color: #4caf50;
-    color: white;
-    padding: 10px 25px;
-    border: none;
-    border-radius: 100px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-  } */
-
 .books-container {
     display: flex;
     grid-template-columns: auto;
     grid-template-rows: auto;
     flex-wrap: wrap;
 }
+
 .book-cover-img {
+    display: flex;
     width: 150px; 
     height: 250px; 
     object-fit: cover; 
@@ -54,16 +29,26 @@ form {
 }
 
 .book-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     max-width: 280px;
     border: #333;
     border-width: 10px;
+    
  }  
 .navigation-station {
     display: flex;
     justify-content: space-around;
 }
 .single-book {
+    display: flex;
     text-align: center;
+    display: grid;
+    justify-content: center;
+}
+
+.account {
     display: grid;
     justify-content: center;
 }

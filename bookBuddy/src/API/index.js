@@ -34,18 +34,39 @@ export const fetchSingleBook = async (bookId) => {
     }
 };
 
-// export const loginUser = async (userObj) => {
-//   try {
-//     const rsp = await fetch(`${API_URL}/users/login`, {
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json"
-//       },
-//       body
-//       )
-//     })
+export const checkOutBook = async (bookId, token) => {
+  try {
+    const rsp = await fetch(`${API_URL}/books/${bookId}`, {
+      method: "PATCH",
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization : `Bearer ${token}`,
+      },
+      body: JSON.stringify({
+        available: false,
+      })
+    });
+    const json = rsp.json();
+    return json;
     
-//   } catch (error) {
+  } catch (error) {
     
-//   }
-// }
+  }
+}
+
+export const checkInBook = async (bookId, token) => {
+  try {
+    const rsp = await fetch(`${API_URL}/reservations/${bookId}`, {
+      method: "DELETE",
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization : `Bearer ${token}`,
+      },
+    });
+    const json = rsp.json();
+    return json;
+    
+  } catch (error) {
+   console.log(error); 
+  }
+}

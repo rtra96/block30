@@ -21,7 +21,7 @@ function App() {
   <Navbar />
    <Routes>
       <Route path = "/"  element ={<AllBooks />} />
-      <Route path = "/books/:bookId" element ={<SingleBook />} />
+      <Route path = "/books/:bookId" element ={<SingleBook token = {token} />} />
       <Route path = "/register" element = {<Register setToken = {setToken} />} />
       <Route path = "/login" element = {<Login setToken = {setToken}/>} />
       <Route path = "/account" element = {<Account token = {token}/>} />
